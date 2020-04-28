@@ -9,7 +9,7 @@ import java.util.Map;
 //import com.viettel.gnoc.commons.config.I18n;
 
 /**
- * @author TungPV
+ * @author Duongnt
  */
 public final class Constants {
 

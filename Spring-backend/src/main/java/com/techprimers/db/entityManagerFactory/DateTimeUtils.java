@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author sondm2@viettel.com.vn
+ * @author Duongnt
  * @version 1.0
  * @since Apr, 12, 2010
  */
