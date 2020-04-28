@@ -1,0 +1,1 @@
+select  a.id, a.cardrank, a.code, a.phone, a.phone, a.revenue, a.starttime, a.updatedate, a.point, a.endtime from locyaltycards a where 1=1 and a.code = :code
