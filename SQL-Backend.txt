@@ -1,0 +1,67 @@
+insert into locyaltycards values (1,'Thẻ Đồng','AB_01',STR_TO_DATE('12-01-2020 00:00:00','%m-%d-%Y %H:%i:%s'),'01669171587',20,20, STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s') ,STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+insert into locyaltycards values (2,'Thẻ Bạc','AB_012',STR_TO_DATE('12-01-2020 00:00:00','%m-%d-%Y %H:%i:%s'),'0983654187',20,20, STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s') ,STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+insert into locyaltycards values (3,'Thẻ Đồng','AB_013',STR_TO_DATE('12-01-2020 00:00:00','%m-%d-%Y %H:%i:%s'),'0958726489',20,20, STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s') ,STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+
+insert into config value(1,10);
+insert into config value(2,20);
+insert into config value(3,30);
+insert into config value(4,40);
+insert into config value(5,50);
+insert into config value(6,60);
+
+insert into cardrank values(1,'AB_01',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'),'20','500','Thẻ Đồng','30',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+insert into cardrank values(2,'AB_012',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'),'20','500','Thẻ Đồng','30',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+insert into cardrank values(3,'AB_013',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'),'20','500','Thẻ Đồng','30',STR_TO_DATE('12-01-2014 00:00:00','%m-%d-%Y %H:%i:%s'));
+ 
+ select * from locyaltycards;
+  select * from config;
+   select * from cardrank;
+commit;
+
+
+
+
+CREATE TABLE `locyaltycards` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `card_rank` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `phone` varchar(255) NOT NULL,
+  `point` int DEFAULT NULL,
+  `revenue` int DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `update_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_ody2jvkn92kc47p4qjoysvt2f` (`code`),
+  UNIQUE KEY `UK_18uhohifjkxnqdqc7j7ywydcd` (`phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `cardrank` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `discount` varchar(255) DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `name_card_rank` varchar(255) NOT NULL,
+  `promotion_sales` int DEFAULT NULL,
+  `update_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_ntky19td77q7cjic1giwh4rm3` (`name_card_rank`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `accumulatedtransactions` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `adjustment_point` int NOT NULL,
+  `adjustment_revenue` int NOT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `id_loyalty_card` int NOT NULL,
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `config` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_nu801pb7w8gtxay1ce4tmj3u5` (`config`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
